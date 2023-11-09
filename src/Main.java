@@ -23,7 +23,9 @@ public class Main {
         double b = promptForNumber("Enter the second number >");
         String operation = getOperation();
         double result = performOperation(a, b, operation);
-        System.out.format("result of %.2f %s %.2f = %.2f%n", a, operation, b, result);
+        String display = String.format("result of %.2f %s %.2f = %.2f%n", a, operation, b, result);
+        // System.out.println(display));
+        JOptionPane.showMessageDialog(null, display, "Your results", JOptionPane.PLAIN_MESSAGE);
     }
 
     private static double performOperation(double a, double b, String operation) {
@@ -35,7 +37,8 @@ public class Main {
         else return Double.NaN;
     }
 
-    private static double promptForNumber(String msg) {
+    private static double promptForNumber(String msg) 
+    {
         // Scanner kb = new Scanner(System.in);
         double num = Double.NaN;
         //System.out.print(msg);
@@ -43,7 +46,9 @@ public class Main {
         do {
             try {
                 //num = Double.parseDouble(kb.nextLine());
-                num = Double.parseDouble(JOptionPane.showInputDialog(null, msg));
+                String resp = JOptionPane.showInputDialog(null, msg);                
+                if(resp == null) throw new NumberFormatException();
+                num = Double.parseDouble(resp);                
                 needValidNumber = false;
             } catch (NumberFormatException ex) {
                 // System.out.println("That's not a number. Try again.");
@@ -86,12 +91,22 @@ public class Main {
         //Scanner kb = new Scanner(System.in);
         boolean awaitingValidResponse = true;
         boolean result = false;
-        final String prompt = "Do you want to make another calculation (y/n or press Enter key for yes)?>";
-        final String errorMessage = "Invalid response. Try again";
+        // final String prompt = "Do you want to make another calculation (y/n or press Enter key for yes)?>";
+        // final String errorMessage = "Invalid response. Try again";
         while (awaitingValidResponse) {
-            //System.out.print("Do you want to make another calculation (y/n or press Enter key for yes)?>");
+            String question = "Do you want to make another calculation (y/n)?";
+            //System.out.print(question);
             //String response = kb.nextLine();
-            String response = JOptionPane.showInputDialog(null, prompt,"Perform another calculation?", JOptionPane.PLAIN_MESSAGE);
+            // String response = JOptionPane.showInputDialog(null, prompt,"Perform another calculation?", JOptionPane.PLAIN_MESSAGE);
+            int resp = JOptionPane.showConfirmDialog(null, question, "Another calculation?", JOptionPane.YES_NO_OPTION);
+            if(resp == JOptionPane.YES_OPTION) {
+                awaitingValidResponse = false;
+                return true;
+            }
+            awaitingValidResponse = false;
+            return false;
+
+            /*
             // no response at all is the same as Yes
             if (response.length() == 0) {
                 result = true;
@@ -111,11 +126,11 @@ public class Main {
                 awaitingValidResponse = false;
                 continue;
             }
+            */
             // if we get this far, the user did not give us a proper response,
             // so let them know and ask again.
             
-            //System.out.println("Invalid response. Try again.");
-            JOptionPane.showMessageDialog(null, errorMessage, "Invalid choice", JOptionPane.ERROR_MESSAGE);
+            //System.out.println("Invalid response. Try again.");            
         }
         return result;
     }
