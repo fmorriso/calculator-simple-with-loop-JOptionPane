@@ -28,13 +28,30 @@ public class Main {
         JOptionPane.showMessageDialog(null, display, "Your results", JOptionPane.PLAIN_MESSAGE);
     }
 
-    private static double performOperation(double a, double b, String operation) {
-        if(operation.equals("+")) return a + b;
-        else if(operation.equals("-")) return a - b;
-        else if(operation.equals("*")) return a * b;
-        else if(operation.equals("/")) return a / b;
-        else if(operation.equals("%")) return a % b;
-        else return Double.NaN;
+    /**
+     * @param a - the first number involved in the operation
+     * @param b - the second number involved in the operation
+     * @param operation - the type of operation to be performed.  Valid operations are "+" (addition), "-" subtraction,
+     *                     "*" (multiplication), "/" (division) or "%" (modulo).
+     * @return - a double precision value with the results of the operation on the two numbers.
+     */
+    private static double performOperation(double a, double b, String operation) 
+    {
+        switch (operation)
+        {
+            case "+":
+                return a = b;
+            case "-":
+                return a - b;
+            case "*":
+                return a * b;
+            case "/":
+                return a / b;
+            case "%":
+                return a % b;
+            default:
+                return Double.NaN;
+        }        
     }
 
     private static double promptForNumber(String msg) 
