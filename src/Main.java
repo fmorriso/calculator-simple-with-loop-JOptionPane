@@ -28,7 +28,7 @@ public class Main {
         JOptionPane.showMessageDialog(null, display, "Your results", JOptionPane.PLAIN_MESSAGE);
     }
 
-    /**
+    /** Performs a single mathematical operation on two numbers.
      * @param a - the first number involved in the operation
      * @param b - the second number involved in the operation
      * @param operation - the type of operation to be performed.  Valid operations are "+" (addition), "-" subtraction,
@@ -54,6 +54,10 @@ public class Main {
         }        
     }
 
+    /** Prompts for a number using a dialog.
+     * @param msg - the message to display in the prompt.
+     * @return - a double precision number that the user entered during the dialog.
+     */
     private static double promptForNumber(String msg) 
     {
         // Scanner kb = new Scanner(System.in);
