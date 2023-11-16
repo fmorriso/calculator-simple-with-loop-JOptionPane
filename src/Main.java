@@ -2,7 +2,7 @@
 import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
-        DialogHelper.MakeDialogsEasierToSee(32);
+        DialogHelper.MakeDialogsEasierToSee(24);
         displayJavaVersion();
         boolean keepCalculating = true;
         while (keepCalculating) {
