@@ -80,7 +80,8 @@ public class Main {
         return num;
     }
 
-    private static String getOperation() {
+    private static String getOperation() 
+    {
         //Scanner kb = new Scanner(System.in);
         String validOperations = "+-*/%";
         String operation = "";
