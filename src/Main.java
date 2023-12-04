@@ -37,21 +37,14 @@ public class Main {
      */
     private static double performOperation(double a, double b, String operation) 
     {
-        switch (operation)
-        {
-            case "+":
-                return a = b;
-            case "-":
-                return a - b;
-            case "*":
-                return a * b;
-            case "/":
-                return a / b;
-            case "%":
-                return a % b;
-            default:
-                return Double.NaN;
-        }        
+        return switch (operation) {
+            case "+" -> a = b;
+            case "-" -> a - b;
+            case "*" -> a * b;
+            case "/" -> a / b;
+            case "%" -> a % b;
+            default -> Double.NaN;
+        };        
     }
 
     /** Prompts for a number using a dialog.
