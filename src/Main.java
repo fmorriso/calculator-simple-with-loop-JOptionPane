@@ -37,14 +37,20 @@ public class Main {
      */
     private static double performOperation(double a, double b, String operation) 
     {
-        return switch (operation) {
-            case "+" -> a = b;
-            case "-" -> a - b;
-            case "*" -> a * b;
-            case "/" -> a / b;
-            case "%" -> a % b;
-            default -> Double.NaN;
-        };        
+        switch (operation) {
+            case "add":
+                return a = b;
+            case "subtract":
+                return a - b;
+            case "multiply":
+                return a * b;
+            case "divide":
+                return a / b;
+            case "modulo":
+                return a % b;
+            default:
+                return Double.NaN;
+        }
     }
 
     /** Prompts for a number using a dialog.
@@ -77,21 +83,13 @@ public class Main {
     {
         //Scanner kb = new Scanner(System.in);
         String validOperations = "+-*/%";
-        String operation = "";
+
         boolean waitingForValidOperation = true;
         String prompt = String.format("What operation do you want to perform (%s) ?", validOperations);
         //System.out.println("Valid operations are " + validOperations);
-        do {
-            //System.out.print("What operation do you wnat to perform?>");
-            //operation = kb.nextLine();
-            operation = JOptionPane.showInputDialog(null, prompt);
-            if (validOperations.indexOf(operation) >= 0)
-                waitingForValidOperation = false;
-            else
-                //System.out.println("Invalid choice. Try again.");
-                JOptionPane.showMessageDialog(null, "Invalid choice. Try again.", "Invalid Operation", JOptionPane.ERROR_MESSAGE);
+        String[] choices = new String[]{"add","subtract","multiply","divide","modulo"};
+        String operation = InputUtils.getSingleChoice("Choose operations","operation", choices);
 
-        } while(waitingForValidOperation);
         return operation;
 
     }
