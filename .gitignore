@@ -1,7 +1,9 @@
 ### IntelliJ IDEA ###
 out/
-!**/src/main/**/out/
-!**/src/test/**/out/
+.idea/
+.idea/**
+.idea/misc.xml
+.idea/workspace.xml
 
 ### Eclipse ###
 .apt_generated
@@ -28,11 +30,4 @@ bin/
 ### Mac OS ###
 .DS_Store
 
-# IntelliJ files and directories
-/.idea/.gitignore
-/.idea/misc.xml
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/vcs.xml
-.idea/misc.xml
-.idea/workspace.xml
+
