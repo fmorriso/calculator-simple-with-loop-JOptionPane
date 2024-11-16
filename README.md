@@ -18,3 +18,4 @@ A simple calculator with a loop that uses JOptionPane dialogs
 
 ## References
 * [JOptionPane - Geeks for Geeks](https://www.geeksforgeeks.org/java-joptionpane/)
+* [JOptionPane - JavaPoint](https://www.javatpoint.com/java-joptionpane)
