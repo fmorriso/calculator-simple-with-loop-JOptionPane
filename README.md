@@ -5,9 +5,9 @@ A simple calculator with a loop that uses JOptionPane dialogs
 
 | Tool     |  Version |
 |:---------|---------:|
-| Java     | 23.0.1.0 |
-| IntelliJ | 2024.3.0 |
-| VSCode   |   1.95.2 |
+| Java     | 24.0.1.0 |
+| IntelliJ | 2025.1.1 |
+| VSCode   |  1.100.0 |
 
 ## Change History
 
@@ -15,6 +15,7 @@ A simple calculator with a loop that uses JOptionPane dialogs
 |:-----------|:------------------------------------|
 | 2023-11-08 | Initial creation                    |
 | 2024-11-15 | Verify code runs with Java 23.0.1.0 |
+| 2025-05-13 | Update InputUtils                   |
 
 ## References
 * [JOptionPane - Geeks for Geeks](https://www.geeksforgeeks.org/java-joptionpane/)

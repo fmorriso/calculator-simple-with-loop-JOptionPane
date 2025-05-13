@@ -1,9 +1,16 @@
 ### IntelliJ IDEA ###
 out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+/.idea
 .idea/
 .idea/**
 .idea/misc.xml
 .idea/workspace.xml
+workspace.xml
+.idea/**/workspace.xml
+*.iml
+CalculatorSimpleWithLoopJOptionPane.iml
 
 ### Eclipse ###
 .apt_generated
